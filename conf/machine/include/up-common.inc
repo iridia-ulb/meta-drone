@@ -7,9 +7,7 @@ require conf/machine/intel-corei7-64.conf
 
 MACHINE_FEATURES += "alsa"
 
-MACHINE_EXTRA_RRECOMMENDS += "linux-firmware v86d eee-acpi-scripts"
-
-EXTRA_OECONF_append_pn-matchbox-panel-2 = " --with-battery=acpi"
+MACHINE_EXTRA_RRECOMMENDS += "linux-firmware v86d"
 
 GLIBC_ADDONS = "nptl"
 
