@@ -2,7 +2,6 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
 PR := "${PR}.1"
 
-COMPATIBLE_MACHINE_up-board = "up-board"
 COMPATIBLE_MACHINE_up-core = "up-core"
 
 # replace these SRCREVs with the real commit ids once you've had
