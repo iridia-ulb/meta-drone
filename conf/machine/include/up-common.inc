@@ -5,8 +5,6 @@
 
 require conf/machine/intel-corei7-64.conf
 
-MACHINE_FEATURES += "alsa"
-
 MACHINE_EXTRA_RRECOMMENDS += "linux-firmware v86d"
 
 GLIBC_ADDONS = "nptl"
