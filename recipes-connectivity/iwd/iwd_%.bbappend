@@ -5,15 +5,13 @@ SRC_URI += " \
 	file://main.conf \
 "
 
-do_configure_wireless() {
+fakeroot do_configure_wireless() {
     install -d ${D}${localstatedir}/lib/iwd/
-    install -m 0644 ${WORKDIR}/Khazad-dum.psk ${D}${localstatedir}/lib/iwd/
+    install ${WORKDIR}/Khazad-dum.psk ${D}${localstatedir}/lib/iwd/
     install -d ${D}${sysconfdir}/iwd/      
-    install -m 0644 ${WORKDIR}/main.conf ${D}${sysconfdir}/iwd/
+    install ${WORKDIR}/main.conf ${D}${sysconfdir}/iwd/
 }
-addtask configure_wireless after do_install_append
+do_configure_wireless[depends] += "virtual/fakeroot-native:do_populate_sysroot"
 
-#FILES_${PN}_append += " \
-#	${sysconfdir}/iwd/* \
-#	${localstatedir}/lib/iwd/* \
-#"
+addtask configure_wireless after do_install before do_package
+
