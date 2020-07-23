@@ -6,7 +6,8 @@ COMPATIBLE_MACHINE_up-core = "up-core"
 
 SRC_URI += " \
 	file://cryptography.cfg \
-	file://i2c-bus.cfg \
+	file://iio.cfg \
+	file://i2c.cfg \
 "
 
 # replace these SRCREVs with the real commit ids once you've had
