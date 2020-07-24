@@ -457,6 +457,105 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 				ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
 				Package () {
 					Package () {"compatible", "nxp,pca9635"},
+				},
+				ToUUID("dbb8e3e6-5886-4ba6-8795-1319f52a966b"),
+				Package () {
+					Package () { "led@0", LED0 },
+					Package () { "led@1", LED1 },
+					Package () { "led@2", LED2 },
+					Package () { "led@4", LED4 },
+					Package () { "led@5", LED5 },
+					Package () { "led@6", LED6 },
+					Package () { "led@8", LED8 },
+					Package () { "led@9", LED9 },
+					Package () { "led@10", LEDA },
+					Package () { "led@12", LEDC },
+					Package () { "led@13", LEDD },
+					Package () { "led@14", LEDE },
+				}
+			})
+			Name (LED0, Package () {
+				ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+				Package () {
+					Package () { "reg", 0x0 },
+					Package () { "label", "arm0:blue" },
+				}
+			})
+			Name (LED1, Package () {
+				ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+				Package () {
+					Package () { "reg", 0x1 },
+					Package () { "label", "arm0:green" },
+				}
+			})
+			Name (LED2, Package () {
+				ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+				Package () {
+					Package () { "reg", 0x2 },
+					Package () { "label", "arm0:red" },
+				}
+			})
+			Name (LED4, Package () {
+				ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+				Package () {
+					Package () { "reg", 0x4 },
+					Package () { "label", "arm1:blue" },
+				}
+			})
+			Name (LED5, Package () {
+				ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+				Package () {
+					Package () { "reg", 0x5 },
+					Package () { "label", "arm1:green" },
+				}
+			})
+			Name (LED6, Package () {
+				ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+				Package () {
+					Package () { "reg", 0x6 },
+					Package () { "label", "arm1:red" },
+				}
+			})
+			Name (LED8, Package () {
+				ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+				Package () {
+					Package () { "reg", 0x8 },
+					Package () { "label", "arm2:blue" },
+				}
+			})
+			Name (LED9, Package () {
+				ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+				Package () {
+					Package () { "reg", 0x9 },
+					Package () { "label", "arm2:green" },
+				}
+			})
+			Name (LEDA, Package () {
+				ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+				Package () {
+					Package () { "reg", 0xA },
+					Package () { "label", "arm2:red" },
+				}
+			})
+			Name (LEDC, Package () {
+				ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+				Package () {
+					Package () { "reg", 0xC },
+					Package () { "label", "arm3:blue" },
+				}
+			})
+			Name (LEDD, Package () {
+				ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+				Package () {
+					Package () { "reg", 0xD },
+					Package () { "label", "arm3:green" },
+				}
+			})
+			Name (LEDE, Package () {
+				ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+				Package () {
+					Package () { "reg", 0xE },
+					Package () { "label", "arm3:red" },
 				}
 			})
 		}
