@@ -19,7 +19,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 					ControllerInitiated,
 					I2C_SPEED,
 					AddressingMode7Bit,
-					"\\_SB.PCI0.I2C0",
+					"\\_SB.PCI0.I2C1",
 					0x00,
 					ResourceConsumer,,)
 			})
@@ -41,7 +41,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 					ControllerInitiated,
 					I2C_SPEED,
 					AddressingMode7Bit,	
-					"\\_SB.PCI0.I2C0",
+					"\\_SB.PCI0.I2C1",
 					0x00,
 					ResourceConsumer,,)
 			})
@@ -155,7 +155,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 					ControllerInitiated,
 					I2C_SPEED,
 					AddressingMode7Bit,	
-					"\\_SB.PCI0.I2C0",
+					"\\_SB.PCI0.I2C1",
 					0x00,
 					ResourceConsumer,,)
 			})
@@ -269,7 +269,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 					ControllerInitiated,
 					I2C_SPEED,
 					AddressingMode7Bit,	
-					"\\_SB.PCI0.I2C0",
+					"\\_SB.PCI0.I2C1",
 					0x00,
 					ResourceConsumer,,)
 			})
@@ -386,7 +386,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 					ControllerInitiated,
 					I2C_SPEED,
 					AddressingMode7Bit,
-					"\\_SB.PCI0.I2C1",
+					"\\_SB.PCI0.I2C2",
 					0x00,
 					ResourceConsumer,,)
 			})
@@ -407,7 +407,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 					ControllerInitiated,
 					I2C_SPEED,
 					AddressingMode7Bit,
-					"\\_SB.PCI0.I2C1",
+					"\\_SB.PCI0.I2C2",
 					0x00,
 					ResourceConsumer,,)
 			})
@@ -428,7 +428,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 					ControllerInitiated,
 					I2C_SPEED,
 					AddressingMode7Bit,
-					"\\_SB.PCI0.I2C1",
+					"\\_SB.PCI0.I2C2",
 					0x00,
 					ResourceConsumer,,)
 			})
@@ -449,7 +449,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 					ControllerInitiated,
 					I2C_SPEED,
 					AddressingMode7Bit,
-					"\\_SB.PCI0.I2C1",
+					"\\_SB.PCI0.I2C2",
 					0x00,
 					ResourceConsumer,,)
 			})
