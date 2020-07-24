@@ -7,6 +7,7 @@ IMAGE_INSTALL += "openssh openssh-keygen openssh-sftp-server"
 IMAGE_INSTALL += "i2c-tools"
 IMAGE_INSTALL += "file parted dosfstools"
 IMAGE_INSTALL += "picocom"
+IMAGE_INSTALL += "haveged"
 
 DISTRO_FEATURES_append = " wifi"
 IMAGE_INSTALL_append += " systemd"
