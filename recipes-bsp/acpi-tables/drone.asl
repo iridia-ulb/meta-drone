@@ -376,7 +376,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 	}
 
 	Scope (\_SB_.PCI0.I2C2) {
-
+		/*
 		Device (IOE0) {
 			Name (_HID, "PRP0001")
 			Name (_DDN, "NXP PCA9554 IO Expander")
@@ -397,7 +397,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 				}
 			})
 		}
-
+		*/
 		Device (IOE1) {
 			Name (_HID, "PRP0001")
 			Name (_DDN, "NXP PCA9554 IO Expander")
