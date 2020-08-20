@@ -8,6 +8,8 @@ SRC_URI += " \
 	file://cryptography.cfg \
 	file://iio.cfg \
 	file://i2c.cfg \
+	file://usb.cfg \
+	file://0001-i2c-pull-in-upstream-changes-for-the-pca954x-driver.patch \
 "
 
 # replace these SRCREVs with the real commit ids once you've had
