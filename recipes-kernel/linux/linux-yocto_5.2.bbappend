@@ -9,6 +9,7 @@ SRC_URI += " \
 	file://iio.cfg \
 	file://i2c.cfg \
 	file://usb.cfg \
+	file://of.cfg \
 	file://0001-i2c-pull-in-upstream-changes-for-the-pca954x-driver.patch \
 "
 
