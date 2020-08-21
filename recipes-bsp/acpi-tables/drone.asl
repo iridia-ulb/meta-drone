@@ -30,9 +30,8 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 				}
 			})
 		}
-		
-		Device (MUX0)
-		{
+
+		Device (MUX0) {
 			Name (_HID, "PRP0001")
 			Name (_DDN, "NXP PCA9544A I2C bus multiplexer")
 			Name (_CRS, ResourceTemplate () {
@@ -49,8 +48,10 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 				ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
 				Package () {
 					Package () {"compatible", "nxp,pca9544"},
+					Package () { "i2c-mux-idle-disconnect", 1 },
 				}
 			})
+
 			Device (CH00) {
 				Name (_ADR, 0)
 				Device (TOF0) {
@@ -62,7 +63,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 							ControllerInitiated,
 							I2C_SPEED,
 							AddressingMode7Bit,
-							"^CH00",
+							"\\_SB.PCI0.I2C1.MUX0.CH00",
 							0x00,
 							ResourceConsumer,,)
 					})
@@ -74,6 +75,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 					})
 				}
 			}
+
 			Device (CH01) {
 				Name (_ADR, 1)
 				Device (TOF1) {
@@ -85,7 +87,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 							ControllerInitiated,
 							I2C_SPEED,
 							AddressingMode7Bit,
-							"^CH01",
+							"\\_SB.PCI0.I2C1.MUX0.CH01",
 							0x00,
 							ResourceConsumer,,)
 					})
@@ -97,6 +99,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 					})
 				}
 			}
+
 			Device (CH02) {
 				Name (_ADR, 2)
 				Device (TOF2) {
@@ -108,7 +111,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 							ControllerInitiated,
 							I2C_SPEED,
 							AddressingMode7Bit,
-							"^CH02",
+							"\\_SB.PCI0.I2C1.MUX0.CH02",
 							0x00,
 							ResourceConsumer,,)
 					})
@@ -120,6 +123,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 					})
 				}
 			}
+
 			Device (CH03) {
 				Name (_ADR, 3)
 				Device (TOF3) {
@@ -131,7 +135,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 							ControllerInitiated,
 							I2C_SPEED,
 							AddressingMode7Bit,
-							"^CH03",
+							"\\_SB.PCI0.I2C1.MUX0.CH03",
 							0x00,
 							ResourceConsumer,,)
 					})
@@ -145,8 +149,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 			}
 		}
 
-		Device (MUX1)
-		{
+		Device (MUX1) {
 			Name (_HID, "PRP0001")
 			Name (_DDN, "NXP PCA9544A I2C bus multiplexer")
 			Name (_CRS, ResourceTemplate () {
@@ -163,8 +166,10 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 				ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
 				Package () {
 					Package () {"compatible", "nxp,pca9544"},
+					Package () { "i2c-mux-idle-disconnect", 1 },
 				}
 			})
+
 			Device (CH00) {
 				Name (_ADR, 0)
 				Device (TOF0) {
@@ -176,7 +181,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 							ControllerInitiated,
 							I2C_SPEED,
 							AddressingMode7Bit,
-							"^CH00",
+							"\\_SB.PCI0.I2C1.MUX1.CH00",
 							0x00,
 							ResourceConsumer,,)
 					})
@@ -188,6 +193,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 					})
 				}
 			}
+
 			Device (CH01) {
 				Name (_ADR, 1)
 				Device (TOF1) {
@@ -199,7 +205,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 							ControllerInitiated,
 							I2C_SPEED,
 							AddressingMode7Bit,
-							"^CH01",
+							"\\_SB.PCI0.I2C1.MUX1.CH01",
 							0x00,
 							ResourceConsumer,,)
 					})
@@ -211,6 +217,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 					})
 				}
 			}
+
 			Device (CH02) {
 				Name (_ADR, 2)
 				Device (TOF2) {
@@ -222,7 +229,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 							ControllerInitiated,
 							I2C_SPEED,
 							AddressingMode7Bit,
-							"^CH02",
+							"\\_SB.PCI0.I2C1.MUX1.CH02",
 							0x00,
 							ResourceConsumer,,)
 					})
@@ -234,6 +241,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 					})
 				}
 			}
+
 			Device (CH03) {
 				Name (_ADR, 3)
 				Device (TOF3) {
@@ -245,7 +253,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 							ControllerInitiated,
 							I2C_SPEED,
 							AddressingMode7Bit,
-							"^CH03",
+							"\\_SB.PCI0.I2C1.MUX1.CH03",
 							0x00,
 							ResourceConsumer,,)
 					})
@@ -259,8 +267,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 			}
 		}
 		
-		Device (MUX2)
-		{
+		Device (MUX2) {
 			Name (_HID, "PRP0001")
 			Name (_DDN, "NXP PCA9544A I2C bus multiplexer")
 			Name (_CRS, ResourceTemplate () {
@@ -277,8 +284,10 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 				ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
 				Package () {
 					Package () {"compatible", "nxp,pca9544"},
+					Package () { "i2c-mux-idle-disconnect", 1 },
 				}
 			})
+
 			Device (CH00) {
 				Name (_ADR, 0)
 				Device (TOF0) {
@@ -290,7 +299,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 							ControllerInitiated,
 							I2C_SPEED,
 							AddressingMode7Bit,
-							"^CH00",
+							"\\_SB.PCI0.I2C1.MUX2.CH00",
 							0x00,
 							ResourceConsumer,,)
 					})
@@ -302,6 +311,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 					})
 				}
 			}
+
 			Device (CH01) {
 				Name (_ADR, 1)
 				Device (TOF1) {
@@ -313,7 +323,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 							ControllerInitiated,
 							I2C_SPEED,
 							AddressingMode7Bit,
-							"^CH01",
+							"\\_SB.PCI0.I2C1.MUX2.CH01",
 							0x00,
 							ResourceConsumer,,)
 					})
@@ -325,6 +335,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 					})
 				}
 			}
+
 			Device (CH02) {
 				Name (_ADR, 2)
 				Device (TOF2) {
@@ -336,7 +347,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 							ControllerInitiated,
 							I2C_SPEED,
 							AddressingMode7Bit,
-							"^CH02",
+							"\\_SB.PCI0.I2C1.MUX2.CH02",
 							0x00,
 							ResourceConsumer,,)
 					})
@@ -348,6 +359,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 					})
 				}
 			}
+
 			Device (CH03) {
 				Name (_ADR, 3)
 				Device (TOF3) {
@@ -359,7 +371,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 							ControllerInitiated,
 							I2C_SPEED,
 							AddressingMode7Bit,
-							"^CH03",
+							"\\_SB.PCI0.I2C1.MUX2.CH03",
 							0x00,
 							ResourceConsumer,,)
 					})
@@ -372,11 +384,9 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 				}
 			}
 		}
-		
 	}
 
 	Scope (\_SB_.PCI0.I2C2) {
-		/*
 		Device (IOE0) {
 			Name (_HID, "PRP0001")
 			Name (_DDN, "NXP PCA9554 IO Expander")
@@ -397,7 +407,6 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 				}
 			})
 		}
-		*/
 		Device (IOE1) {
 			Name (_HID, "PRP0001")
 			Name (_DDN, "NXP PCA9554 IO Expander")
