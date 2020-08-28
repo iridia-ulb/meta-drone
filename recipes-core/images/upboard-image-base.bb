@@ -3,7 +3,21 @@ DESCRIPTION = "Linux image for UP family boards based on core-image-base"
 LICENSE = "GPLv2"
 
 require recipes-core/images/core-image-base.bb
-require upboard-image-base.inc
+
+IMAGE_FEATURES += "package-management"
+
+IMAGE_INSTALL += "kernel-modules"
+IMAGE_INSTALL += "dmidecode"
+IMAGE_INSTALL += "python3 python3-pip"
+IMAGE_INSTALL += "openssh openssh-keygen openssh-sftp-server"
+IMAGE_INSTALL += "i2c-tools"
+IMAGE_INSTALL += "file parted dosfstools"
+IMAGE_INSTALL += "picocom"
+IMAGE_INSTALL += "haveged"
+IMAGE_INSTALL += "argos3-srocs yavta"
+DISTRO_FEATURES_append = " wifi"
+IMAGE_INSTALL_append += " systemd"
+IMAGE_INSTALL_append += " iw iwd"
 
 set_local_timezone() {
     ln -sf /usr/share/zoneinfo/Europe/Brussels ${IMAGE_ROOTFS}/etc/localtime
