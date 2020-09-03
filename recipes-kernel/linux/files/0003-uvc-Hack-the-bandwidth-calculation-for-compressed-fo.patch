@@ -1,0 +1,28 @@
+From 98ff59ff9d79d769d96471af67914f403e10f224 Mon Sep 17 00:00:00 2001
+From: Michael Allwright <allsey87@gmail.com>
+Date: Thu, 3 Sep 2020 16:36:24 +0200
+Subject: [PATCH] uvc: Hack the bandwidth calculation for compressed formats
+
+---
+ drivers/media/usb/uvc/uvc_video.c | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/drivers/media/usb/uvc/uvc_video.c b/drivers/media/usb/uvc/uvc_video.c
+index 8fa77a81dd7f..f1396f3ee50c 100644
+--- a/drivers/media/usb/uvc/uvc_video.c
++++ b/drivers/media/usb/uvc/uvc_video.c
+@@ -196,6 +196,11 @@ static void uvc_fixup_video_ctrl(struct uvc_streaming *stream,
+ 
+ 		ctrl->dwMaxPayloadTransferSize = bandwidth;
+ 	}
++
++	/* Hack the bandwidth for compressed formats */
++	if (format->flags & UVC_FMT_FLAG_COMPRESSED) {
++		ctrl->dwMaxPayloadTransferSize = 1024;
++	}
+ }
+ 
+ static size_t uvc_video_ctrl_size(struct uvc_streaming *stream)
+-- 
+2.25.1
+
