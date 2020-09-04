@@ -1,7 +1,7 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
 SRC_URI += " \
-	file://Khazad-dum.psk \
+	file://MergeableNervousSystem.psk \
 	file://main.conf \
 "
 
