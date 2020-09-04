@@ -105,6 +105,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 						ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
 						Package () {
 							Package () {"compatible", "st,vl53l0x"},
+							Package () {"label", "1"},
 						}
 					})
 				}
@@ -129,6 +130,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 						ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
 						Package () {
 							Package () {"compatible", "st,vl53l0x"},
+							Package () {"label", "2"},
 						}
 					})
 				}
@@ -153,6 +155,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 						ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
 						Package () {
 							Package () {"compatible", "st,vl53l0x"},
+							Package () {"label", "3"},
 						}
 					})
 				}
@@ -177,6 +180,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 						ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
 						Package () {
 							Package () {"compatible", "st,vl53l0x"},
+							Package () {"label", "4"},
 						}
 					})
 				}
@@ -223,6 +227,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 						ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
 						Package () {
 							Package () {"compatible", "st,vl53l0x"},
+							Package () {"label", "5"},
 						}
 					})
 				}
@@ -247,6 +252,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 						ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
 						Package () {
 							Package () {"compatible", "st,vl53l0x"},
+							Package () {"label", "6"},
 						}
 					})
 				}
@@ -271,6 +277,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 						ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
 						Package () {
 							Package () {"compatible", "st,vl53l0x"},
+							Package () {"label", "7"},
 						}
 					})
 				}
@@ -295,6 +302,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 						ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
 						Package () {
 							Package () {"compatible", "st,vl53l0x"},
+							Package () {"label", "8"},
 						}
 					})
 				}
@@ -341,6 +349,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 						ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
 						Package () {
 							Package () {"compatible", "st,vl53l0x"},
+							Package () {"label", "9"},
 						}
 					})
 				}
@@ -365,6 +374,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 						ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
 						Package () {
 							Package () {"compatible", "st,vl53l0x"},
+							Package () {"label", "10"},
 						}
 					})
 				}
@@ -389,6 +399,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 						ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
 						Package () {
 							Package () {"compatible", "st,vl53l0x"},
+							Package () {"label", "11"},
 						}
 					})
 				}
@@ -413,6 +424,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 						ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
 						Package () {
 							Package () {"compatible", "st,vl53l0x"},
+							Package () {"label", "12"},
 						}
 					})
 				}
