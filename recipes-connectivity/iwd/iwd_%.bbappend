@@ -7,7 +7,7 @@ SRC_URI += " \
 
 fakeroot do_configure_wireless() {
     install -d ${D}${localstatedir}/lib/iwd/
-    install ${WORKDIR}/Khazad-dum.psk ${D}${localstatedir}/lib/iwd/
+    install ${WORKDIR}/MergeableNervousSystem.psk ${D}${localstatedir}/lib/iwd/
     install -d ${D}${sysconfdir}/iwd/      
     install ${WORKDIR}/main.conf ${D}${sysconfdir}/iwd/
 }
