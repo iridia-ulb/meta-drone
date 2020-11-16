@@ -15,7 +15,6 @@ IMAGE_INSTALL += "file parted dosfstools"
 IMAGE_INSTALL += "picocom"
 IMAGE_INSTALL += "haveged"
 IMAGE_INSTALL += "argos3-srocs yavta"
-DISTRO_FEATURES_append = " wifi"
 IMAGE_INSTALL_append += " systemd"
 IMAGE_INSTALL_append += " iw iwd"
 
