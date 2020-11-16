@@ -2,7 +2,7 @@
 
 ## Description
 This repository contains a layer of the Yocto build system, which generates a complete, bootable Linux OS ready to be run on the IRIDIA Drone. This system comes preinstalled with:
-- ARGoS3 and a plugin for the Drone robot
+- ARGoS3 and a plugin for the drone
 - Python
 
 ## Quick start
@@ -10,6 +10,7 @@ We have listed two ways to build the system below. The reccomended method is to 
 
 To get started, you need to decide where you want to build the system for the drone. Keep in mind that while the resulting image will be approximately 1 GB in size, the build itself will require around **50 GB** of free disk space. In the following steps, we assume that the build location is ``/home/`id -un`/yocto-drone`` where `` `id -un` `` will be replaced with the current username.
 ```bash
+# Create a directory for the build system
 mkdir /home/`id -un`/yocto-drone
 ```
 
@@ -74,7 +75,7 @@ bitbake upboard-image-base
 Occasionally, the build can fail due to internet connectivity issues or due to an oversight in the dependency tree. These issues are normally resolved by just re-executing the command above.
 
 ## Copying the image (TO BE UDPATED)
-The most straightforward way to burn a bootable image to the SD card is to use `bmaptool` from Intel. On Ubuntu, this package can be installed with `sudo apt install bmap-tools`. Most distributions of Linux should have a similar package that can be installed.
+The most straightforward way to copy a bootable image to the USB stick is to use the `dd` utility available on most Linux systems.
 
 To burn the image, you need to locate the output image from the build system and to identify the device to which you would like to copy the image. The output image files are called `core-image-base-raspberrypi0-wifi.wic.bz2` and `core-image-base-raspberrypi0-wifi.wic.bmap` should be located under `poky/build/tmp/deploy/images/raspberrypi0-wifi`. The device (probably an SD card) that you want to write to will usually be something like `/dev/sdX` or `/dev/mmcX`. The easiest way to find out is to inspect the output of `dmesg` before and after inserting the SD card into your computer. You will need to unmount the device before burning the image. Be careful not to write the image to the device where your OS is installed.
 
@@ -84,9 +85,9 @@ sudo bmaptool copy PATH/TO/core-image-base-raspberrypi0-wifi.wic.bz2 /dev/DEVICE
 ```
 
 ## Booting the image and accessing the console
-The easiest and most reliable way to get access to the drone console is by using a USB keyboard and HDMI monitor. These peripherals can be directly connected to the Up Core board. WARNING: Do not use the DC power jack while the Up Core is connected to the drone PCB.
+The easiest and most reliable way to get access to the drone console is by using a USB keyboard and HDMI monitor. These peripherals can be directly connected to the Up Core board. *WARNING: Do not use the DC power jack while the Up Core is connected to the drone PCB.*
 
-## BIOS Configuration
+## BIOS configuration
 To enable support for the USB hubs on the drone PCB, some additional configuration is required.
 
 
