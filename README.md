@@ -41,7 +41,7 @@ sudo docker build -t yocto-drone:latest https://github.com/allsey87/meta-drone.g
 Once the above command has completed sucessfully, you can run the following command to create a container from the image. Note the two paths given after the `-v` option. The format of this argument is `path/on/host:path/in/container` where `path/on/host` is a directory on your host system and `path/in/container` is a directory inside the Docker container. This command will map the home directory inside the container to a directory called `yocto-drone` under the current users home directory on the host.
 ```bash
 sudo docker create --tty --interactive --volume /home/`id -un`/yocto-drone:/home/`id -un` \
- --name yocto-drone --hostname yocto-pipuck yocto-drone:latest
+ --name yocto-drone --hostname yocto-drone yocto-drone:latest
 ```
 After executing this command, you should have a new container with the build environment. The following commands will start and attach to that container.
 
