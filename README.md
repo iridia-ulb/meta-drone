@@ -1,7 +1,7 @@
 # The meta-drone layer for the Yocto build system
 
 ## Description
-This repository contains a layer of the Yocto build system, which generates a complete, bootable Linux OS ready to be run on the IRIDIA Drone. This system comes preinstalled with:
+This repository contains a layer of the Yocto build system, which generates a complete, bootable Linux OS ready to be run on the IRIDIA drone. This system comes preinstalled with:
 - ARGoS3 and a plugin for the drone
 - Python
 
@@ -30,7 +30,7 @@ git clone https://github.com/allsey87/meta-drone.git
 From this point, you can continue setting up the build environment on either your host system or inside a Docker container. However, unless you are running a cleanly installed and up-to-date version of Ubuntu, we strongly reccomend using the Docker-based method.
 
 ### The Docker way
-The easiest way to build the system for the Drone is to use Docker. Given you have Docker installed, the following command will execute the Dockerfile in this repository and create a Docker image based on Ubuntu 20.04 LTS. The image will contain a user and a group, which match the current user and group. Setting the user and group enables trivial access to the build system from the host.
+The easiest way to build the system for the drone is to use Docker. Given you have Docker installed, the following command will execute the Dockerfile in this repository and create a Docker image based on Ubuntu 18.04 LTS. The image will contain a user and a group, which match the current user and group. Setting the user and group enables trivial access to the build system from the host.
 ```bash
 sudo docker build -t yocto-drone:latest https://github.com/allsey87/meta-drone.git#:docker \
  --build-arg host_usrid=`id -u` \
@@ -40,7 +40,8 @@ sudo docker build -t yocto-drone:latest https://github.com/allsey87/meta-drone.g
 ```
 Once the above command has completed sucessfully, you can run the following command to create a container from the image. Note the two paths given after the `-v` option. The format of this argument is `path/on/host:path/in/container` where `path/on/host` is a directory on your host system and `path/in/container` is a directory inside the Docker container. This command will map the home directory inside the container to a directory called `yocto-drone` under the current users home directory on the host.
 ```bash
-sudo docker create -t -i --name yocto-drone -v /home/`id -un`/yocto-drone:/home/`id -un` yocto-drone:latest
+sudo docker create --tty --interactive --volume /home/`id -un`/yocto-drone:/home/`id -un` \
+ --name yocto-drone --hostname yocto-pipuck yocto-drone:latest
 ```
 After executing this command, you should have a new container with the build environment. The following commands will start and attach to that container.
 
