@@ -16,6 +16,7 @@ IMAGE_INSTALL += "picocom"
 IMAGE_INSTALL += "haveged"
 IMAGE_INSTALL += "argos3-srocs yavta"
 IMAGE_INSTALL_append += " systemd"
+IMAGE_INSTALL_append += " fernbedienung"
 IMAGE_INSTALL_append += " iw iwd"
 
 set_local_timezone() {
