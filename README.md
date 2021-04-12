@@ -75,15 +75,19 @@ bitbake upboard-image-base
 
 Occasionally, the build can fail due to internet connectivity issues or due to an oversight in the dependency tree. These issues are normally resolved by just re-executing the command above.
 
-## Copying the image (TO BE UDPATED)
-The most straightforward way to copy a bootable image to the USB stick is to use the `dd` utility available on most Linux systems.
-
-To burn the image, you need to locate the output image from the build system and to identify the device to which you would like to copy the image. The output image files are called `core-image-base-raspberrypi0-wifi.wic.bz2` and `core-image-base-raspberrypi0-wifi.wic.bmap` should be located under `poky/build/tmp/deploy/images/raspberrypi0-wifi`. The device (probably an SD card) that you want to write to will usually be something like `/dev/sdX` or `/dev/mmcX`. The easiest way to find out is to inspect the output of `dmesg` before and after inserting the SD card into your computer. You will need to unmount the device before burning the image. Be careful not to write the image to the device where your OS is installed.
-
+## Copying the image
+The most straightforward way to copy a bootable image to the USB stick is to use the `dd` utility available on most Linux systems. If you are using the Docker method, detach from the container before continuing. Before using `dd` to transfer the image, check the kernel messages (via, e.g., `sudo dmesg`) after attaching the USB stick and carefully note the device name of the USB stick. It usually takes the form of `/dev/sdX`. To write the image to the device, execute the following commands replacing `sdX` with the device you noted while inspecting the kernel messages:
 ```bash
-unmount /dev/DEVICE*
-sudo bmaptool copy PATH/TO/core-image-base-raspberrypi0-wifi.wic.bz2 /dev/DEVICE
+# unmount the device and/or its partitions
+umount /dev/sdX*
+# write the image to the device
+dd if=PATH/TO/poky/build/tmp/deploy/images/up-core/upboard-image-base-up-core.hddimg of=/dev/sdX
+# use sync to ensure that all data has been copied
+sync
+# unmount the device and/or its partitions again (in case they were mounted)
+umount /dev/sdX*
 ```
+After completing these steps, you should be able to remove the USB stick from the development PC and to boot it using the Up Core board.
 
 ## Booting the image and accessing the console
 The easiest and most reliable way to get access to the drone console is by using a USB keyboard and HDMI monitor. These peripherals can be directly connected to the Up Core board.
