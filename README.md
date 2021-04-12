@@ -86,11 +86,16 @@ sudo bmaptool copy PATH/TO/core-image-base-raspberrypi0-wifi.wic.bz2 /dev/DEVICE
 ```
 
 ## Booting the image and accessing the console
-The easiest and most reliable way to get access to the drone console is by using a USB keyboard and HDMI monitor. These peripherals can be directly connected to the Up Core board. *WARNING: Do not use the DC power jack while the Up Core is connected to the drone PCB.*
+The easiest and most reliable way to get access to the drone console is by using a USB keyboard and HDMI monitor. These peripherals can be directly connected to the Up Core board.
+
+*WARNING: Do not use the DC power jack while the Up Core is connected to the drone PCB.*
 
 ## BIOS configuration
-To enable support for the USB hubs on the drone PCB, some additional configuration is required.
-
+By default, only one of the two USB HSIC interfaces is enabled on the Up Core, resulting in only two of the four the camera ports being available to the system. This configuration can be changed in the Up Core BIOS settings. To access these settings, connect a monitor to the HDMI port and a keyboard to the USB port. Once the UP logo appears on the monitor, hit F12 to enter the BIOS settings. The settings that need to be changed require the engineering BIOS password `upassw0rd` to be entered. Note that this password unlocks settings that can permanently damage the Up Core and void its warranty. Follow these steps carefully:
+1. Scroll down to and select `CRB Setup`
+2. Select and enter `CRB chipset` > `South Bridge` > `USB Configuration`
+3. Enable both `HSIC Port 1` and `HSIC Port 2`
+4. Press F4 to save and exit the CRB Setup and then press F10 to save and exit the BIOS settings
 
 ## Wifi configuration
 The wireless connection is controlled using the `iwctl` command. This interactive command makes the process of connecting to a wireless network relatively painless. Once you are connected, the wireless network is saved on the drone under `/var/lib/iwd/SSID.KEY_TYPE`. The network should automatically connect on boot and fetch an IP address using DHCP.
