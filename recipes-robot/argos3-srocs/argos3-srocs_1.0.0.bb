@@ -1,6 +1,6 @@
-SUMMARY = "BuilderBot plug-in for ARGoS3"
+SUMMARY = "Drone plug-in for ARGoS3"
 LICENSE = "MIT"
-LIC_FILES_CHKSUM = "file://git/src/LICENSE;md5=b176b8e2358647d4c584c9a52b6715fd"
+LIC_FILES_CHKSUM = "file://${COREBASE}/meta/files/common-licenses/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
 
 DEPENDS = "argos3 apriltag v4l-utils libjpeg-turbo tbb libiio"
 RDEPENDS_${PN} = "argos3 apriltag v4l-utils libjpeg-turbo tbb libiio"
@@ -13,10 +13,13 @@ SRCREV = "${AUTOREV}"
 
 S = "${WORKDIR}/git"
 
-OECMAKE_SOURCEPATH = "${WORKDIR}/git/src"
+OECMAKE_SOURCEPATH = "${S}/src"
 
-S = "${WORKDIR}"
+EXTRA_OECMAKE += "-DARGOS_BUILD_FOR=drone  -DARGOS_DOCUMENTATION=OFF"
 
+# Since the base package name (BPN) is argos3-srocs and not argos3, Bitbake
+# will not collect the files that we install inside ${datadir}/argos3 and
+# ${libdir}/argos3
 FILES_${PN} += "${libdir}/argos3/*"
-FILES_${PN} += "${datadir}/argos3"
+FILES_${PN} += "${datadir}/argos3/*"
 
