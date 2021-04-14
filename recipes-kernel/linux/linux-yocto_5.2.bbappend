@@ -10,10 +10,10 @@ SRC_URI += " \
 	file://i2c.cfg \
 	file://usb.cfg \
 	file://of.cfg \
-	file://0001-i2c-pull-in-upstream-changes-for-the-pca954x-driver.patch \
-	file://0002-usb-simplify-USB3503-driver.patch \
-	file://0003-uvc-Hack-the-bandwidth-calculation-for-compressed-fo.patch \
-	file://0001-Work-in-progress.patch \
+	file://0001-pca954x-Use-driver-from-upstream-kernel.patch \
+	file://0002-uvc-Hack-the-bandwidth-calculation-for-compressed-fo.patch \
+	file://0003-vl53l0x-Add-iio-trigger-functionality.patch \
+   file://0004-usb3503-Use-driver-from-upstream-kernel.patch \
 "
 
 # replace these SRCREVs with the real commit ids once you've had

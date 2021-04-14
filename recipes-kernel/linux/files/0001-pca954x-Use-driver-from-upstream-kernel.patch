@@ -1,7 +1,7 @@
 From 8d25e9d51cba3b0c7c58f909d67e3f6f68ee43bc Mon Sep 17 00:00:00 2001
 From: Michael Allwright <allsey87@gmail.com>
 Date: Thu, 20 Aug 2020 14:26:02 +0200
-Subject: [PATCH] i2c: pull in upstream changes for the pca954x driver
+Subject: [PATCH] pca954x: Use driver from upstream kernel
 
 ---
  drivers/i2c/muxes/i2c-mux-pca954x.c | 109 +++++++++++++++-------------

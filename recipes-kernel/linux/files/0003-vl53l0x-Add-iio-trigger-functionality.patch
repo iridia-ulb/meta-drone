@@ -1,7 +1,7 @@
 From 009a806143f83ff2bdd194ebb414d3da97d0ba38 Mon Sep 17 00:00:00 2001
 From: Michael Allwright <allsey87@gmail.com>
 Date: Fri, 4 Sep 2020 16:07:00 +0200
-Subject: [PATCH] Work in progress
+Subject: [PATCH] vl53l0x: Add IIO trigger functionality
 
 ---
  drivers/iio/proximity/vl53l0x-i2c.c | 166 +++++++++++++++++++++++++---
