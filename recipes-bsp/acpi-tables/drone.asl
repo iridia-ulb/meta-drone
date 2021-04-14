@@ -53,6 +53,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 				ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
 				Package () {
 					Package () {"compatible", "smsc,usb3503"},
+					Package () {"initial-mode", 1 },
 					Package () {"connect-gpios", Package () {
 						^USB0, 0, 0, 0,
 					}},
@@ -520,6 +521,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 				ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
 				Package () {
 					Package () {"compatible", "smsc,usb3503"},
+					Package () {"initial-mode", 1 },
 					Package () {"connect-gpios", Package () {
 						^USB1, 0, 0, 0,
 					}},
