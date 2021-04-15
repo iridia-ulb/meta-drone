@@ -61,7 +61,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 						^USB0, 1, 0, 1,
 					}},
 					Package () {"intn-gpios", Package () {
-						^USB0, 2, 0, 1,
+						^USB0, 2, 0, 0,
 					}},
 				}
 			})
@@ -529,7 +529,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 						^USB1, 1, 0, 1,
 					}},
 					Package () {"intn-gpios", Package () {
-						^USB1, 2, 0, 1,
+						^USB1, 2, 0, 0,
 					}},
 				}
 			})
