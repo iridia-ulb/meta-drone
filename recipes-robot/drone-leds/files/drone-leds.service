@@ -1,0 +1,9 @@
+[Unit]
+Description=DroneLEDs
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /usr/lib/drone-leds/service.py
+
+[Install]
+WantedBy=multi-user.target
