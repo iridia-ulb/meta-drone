@@ -14,6 +14,7 @@ SRC_URI += " \
 	file://0002-uvc-Hack-the-bandwidth-calculation-for-compressed-fo.patch \
 	file://0003-vl53l0x-Add-iio-trigger-functionality.patch \
 	file://0004-usb3503-Use-driver-from-upstream-kernel.patch \
+	file://0005-pca953x-add-debug-info.patch \
 "
 
 # file://usb-no-autosuspend.cfg

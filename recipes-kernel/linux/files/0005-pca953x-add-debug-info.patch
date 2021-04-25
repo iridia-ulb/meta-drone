@@ -1,0 +1,33 @@
+From a00f5f443cf0a5e8169927846859cd26eece17d5 Mon Sep 17 00:00:00 2001
+From: Michael Allwright <allsey87@gmail.com>
+Date: Fri, 23 Apr 2021 12:41:05 +0200
+Subject: [PATCH] pca953x: add debug info
+
+---
+ drivers/gpio/gpio-pca953x.c | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/gpio/gpio-pca953x.c b/drivers/gpio/gpio-pca953x.c
+index 96d42f571a18..57e180892f68 100644
+--- a/drivers/gpio/gpio-pca953x.c
++++ b/drivers/gpio/gpio-pca953x.c
+@@ -427,10 +427,15 @@ static void pca953x_gpio_set_value(struct gpio_chip *gc, unsigned off, int val)
+ 	u8 outreg = pca953x_recalc_addr(chip, chip->regs->output, off,
+ 					true, false);
+ 	u8 bit = BIT(off % BANK_SZ);
++	int ret;
+ 
+ 	mutex_lock(&chip->i2c_lock);
+-	regmap_write_bits(chip->regmap, outreg, bit, val ? bit : 0);
++	ret = regmap_write_bits(chip->regmap, outreg, bit, val ? bit : 0);
+ 	mutex_unlock(&chip->i2c_lock);
++	if (ret < 0)
++		dev_err(&chip->client->dev, "failed setting bit %x to %x: %d\n", off, val, ret);
++	else
++		dev_info(&chip->client->dev, "set bit %x to %x\n", off, val);
+ }
+ 
+ static int pca953x_gpio_get_direction(struct gpio_chip *gc, unsigned off)
+-- 
+2.17.1
+
