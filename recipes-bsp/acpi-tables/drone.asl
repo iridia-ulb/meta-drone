@@ -552,7 +552,7 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 				ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
 				Package () {
 					Package () {"compatible", "nxp,pca9635"},
-					Package () {"nxp,inverted-out", 1},
+					Package () {"nxp,inverted-out", 0},
 				},
 				ToUUID("dbb8e3e6-5886-4ba6-8795-1319f52a966b"),
 				Package () {
