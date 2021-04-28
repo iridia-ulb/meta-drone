@@ -14,11 +14,9 @@ SRC_URI += " \
 	file://0002-uvc-Hack-the-bandwidth-calculation-for-compressed-fo.patch \
 	file://0003-vl53l0x-Add-iio-trigger-functionality.patch \
 	file://0004-usb3503-Use-driver-from-upstream-kernel.patch \
-	file://0005-pca953x-add-debug-info.patch \
+	file://0005-pca953x-Add-debugging-information.patch \
+	file://0006-usb3503-Improve-debugging-messages-and-disable-HUB_C.patch \	
 "
-
-# file://usb-no-autosuspend.cfg
-# file://0005-usb3503-Disable-regmap-configuration-during-connect.patch
 
 # replace these SRCREVs with the real commit ids once you've had
 # the appropriate changes committed to the upstream linux-yocto repo
