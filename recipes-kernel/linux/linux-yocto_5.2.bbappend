@@ -8,14 +8,11 @@ SRC_URI += " \
 	file://cryptography.cfg \
 	file://iio.cfg \
 	file://i2c.cfg \
-	file://usb.cfg \
 	file://of.cfg \
 	file://0001-pca954x-Use-driver-from-upstream-kernel.patch \
 	file://0002-uvc-Hack-the-bandwidth-calculation-for-compressed-fo.patch \
 	file://0003-vl53l0x-Add-iio-trigger-functionality.patch \
-	file://0004-usb3503-Use-driver-from-upstream-kernel.patch \
 	file://0005-pca953x-Add-debugging-information.patch \
-	file://0006-usb3503-Improve-debugging-messages-and-disable-HUB_C.patch \	
 "
 
 # replace these SRCREVs with the real commit ids once you've had

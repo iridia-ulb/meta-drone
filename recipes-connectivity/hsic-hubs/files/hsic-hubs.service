@@ -1,0 +1,9 @@
+[Unit]
+Description=HSICHubs
+After=network.target
+
+[Service]
+ExecStart=/bin/sh /usr/lib/hsic-hubs/service.sh
+
+[Install]
+WantedBy=multi-user.target

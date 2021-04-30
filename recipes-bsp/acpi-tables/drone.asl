@@ -9,63 +9,6 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 	External (_SB_.PCI0.I2C2, DeviceObj)
 
 	Scope (\_SB_.PCI0.I2C1) {
-		Device (USB0) {
-			Name (_HID, "PRP0001")
-			Name (_DDN, "Microchip USB3503 HSIC High-Speed Hub")
-			Name (_CRS, ResourceTemplate () {
-				I2cSerialBus (
-					0x08,
-					ControllerInitiated,
-					I2C_SPEED,
-					AddressingMode7Bit,
-					"\\_SB.PCI0.I2C1",
-					0x00,
-					ResourceConsumer,,)
-				GpioIo (
-					Exclusive,
-					PullUp,
-					0,
-					0,
-					IoRestrictionNone,
-					"\\_SB_.PCI0.I2C2.GPI0",
-					0,
-					ResourceConsumer) {4}
-				GpioIo (
-					Exclusive,
-					PullUp,
-					0,
-					0,
-					IoRestrictionNone,
-					"\\_SB_.PCI0.I2C2.GPI0",
-					0,
-					ResourceConsumer) {5}
-				GpioIo (
-					Exclusive,
-					PullUp,
-					0,
-					0,
-					IoRestrictionNone, 
-					"\\_SB_.PCI0.I2C2.GPI0",
-					0, 
-					ResourceConsumer) {6}
-			})
-			Name (_DSD, Package () {
-				ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
-				Package () {
-					Package () {"compatible", "smsc,usb3503"},
-					Package () {"initial-mode", 1 },
-					Package () {"connect-gpios", Package () {
-						^USB0, 0, 0, 0,
-					}},
-					Package () {"reset-gpios", Package () {
-						^USB0, 1, 0, 1,
-					}},
-					Package () {"intn-gpios", Package () {
-						^USB0, 2, 0, 0,
-					}},
-				}
-			})
-		}
 		Device (MUX0) {
 			Name (_HID, "PRP0001")
 			Name (_DDN, "NXP PCA9544A I2C bus multiplexer")
@@ -472,65 +415,6 @@ DefinitionBlock ("", "SSDT", 5, "IRIDIA", "Drone", 1)
 				ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
 				Package () {
 					Package () {"compatible", "nxp,pca9554"},
-				}
-			})
-		}
-
-		Device (USB1) {
-			Name (_HID, "PRP0001")
-			Name (_DDN, "Microchip USB3503 HSIC High-Speed Hub")
-			Name (_CRS, ResourceTemplate () {
-				I2cSerialBus (
-					0x08,
-					ControllerInitiated,
-					I2C_SPEED,
-					AddressingMode7Bit,
-					"\\_SB.PCI0.I2C2",
-					0x00,
-					ResourceConsumer,,)
-
-				GpioIo (
-					Exclusive,
-					PullUp,
-					0,
-					0,
-					IoRestrictionNone,
-					"\\_SB_.PCI0.I2C2.GPI0",
-					0,
-					ResourceConsumer) {0}
-				GpioIo (
-					Exclusive,
-					PullUp,
-					0,
-					0,
-					IoRestrictionNone,
-					"\\_SB_.PCI0.I2C2.GPI0",
-					0,
-					ResourceConsumer) {1}
-				GpioIo (
-					Exclusive,
-					PullUp,
-					0,
-					0,
-					IoRestrictionNone, 
-					"\\_SB_.PCI0.I2C2.GPI0",
-					0, 
-					ResourceConsumer) {2}
-			})
-			Name (_DSD, Package () {
-				ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
-				Package () {
-					Package () {"compatible", "smsc,usb3503"},
-					Package () {"initial-mode", 1 },
-					Package () {"connect-gpios", Package () {
-						^USB1, 0, 0, 0,
-					}},
-					Package () {"reset-gpios", Package () {
-						^USB1, 1, 0, 1,
-					}},
-					Package () {"intn-gpios", Package () {
-						^USB1, 2, 0, 0,
-					}},
 				}
 			})
 		}
