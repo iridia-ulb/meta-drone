@@ -18,6 +18,7 @@ IMAGE_INSTALL += "argos3-srocs"
 IMAGE_INSTALL_append += " systemd"
 IMAGE_INSTALL_append += " fernbedienung"
 IMAGE_INSTALL_append += " iw iwd"
+IMAGE_INSTALL_append += " udev-rules-drone"
 IMAGE_INSTALL_append += " hsic-hubs"
 
 set_local_timezone() {
