@@ -3,3 +3,7 @@ DEVPATH=="/devices/pci0000:00/0000:00:14.0/usb1/1-1/1-1.2/*", SUBSYSTEM=="video4
 DEVPATH=="/devices/pci0000:00/0000:00:14.0/usb1/1-1/1-1.3/*", SUBSYSTEM=="video4linux", ATTRS{idVendor}=="2085", ATTRS{idProduct}=="f37e", ENV{ID_V4L_CAPABILITIES}==":capture:", SYMLINK+="camera2"
 DEVPATH=="/devices/pci0000:00/0000:00:14.0/usb1/1-1/1-1.4/*", SUBSYSTEM=="video4linux", ATTRS{idVendor}=="2085", ATTRS{idProduct}=="f37e", ENV{ID_V4L_CAPABILITIES}==":capture:", SYMLINK+="camera3"
 
+DEVPATH=="/devices/pci0000:00/0000:00:14.0/usb1/1-1/1-1.1/*", SUBSYSTEM=="video4linux", ATTRS{idVendor}=="2084", ATTRS{idProduct}=="f37d", ENV{ID_V4L_CAPABILITIES}==":capture:", SYMLINK+="camera0"
+DEVPATH=="/devices/pci0000:00/0000:00:14.0/usb1/1-1/1-1.2/*", SUBSYSTEM=="video4linux", ATTRS{idVendor}=="2084", ATTRS{idProduct}=="f37d", ENV{ID_V4L_CAPABILITIES}==":capture:", SYMLINK+="camera1"
+DEVPATH=="/devices/pci0000:00/0000:00:14.0/usb1/1-1/1-1.3/*", SUBSYSTEM=="video4linux", ATTRS{idVendor}=="2084", ATTRS{idProduct}=="f37d", ENV{ID_V4L_CAPABILITIES}==":capture:", SYMLINK+="camera2"
+DEVPATH=="/devices/pci0000:00/0000:00:14.0/usb1/1-1/1-1.4/*", SUBSYSTEM=="video4linux", ATTRS{idVendor}=="2084", ATTRS{idProduct}=="f37d", ENV{ID_V4L_CAPABILITIES}==":capture:", SYMLINK+="camera3"
