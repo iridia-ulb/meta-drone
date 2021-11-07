@@ -18,7 +18,7 @@ index 8fa77a81dd7f..f1396f3ee50c 100644
 +
 +	/* Hack the bandwidth for compressed formats */
 +	if (format->flags & UVC_FMT_FLAG_COMPRESSED) {
-+		ctrl->dwMaxPayloadTransferSize = 1024;
++		ctrl->dwMaxPayloadTransferSize = 512;
 +	}
  }
  
