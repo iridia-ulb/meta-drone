@@ -15,8 +15,6 @@ S = "${WORKDIR}/git"
 
 OECMAKE_SOURCEPATH = "${S}/src"
 
-EXTRA_OECMAKE += "-DARGOS_BUILD_FOR=drone"
-
 # Since the base package name (BPN) is argos3-drone and not argos3, Bitbake will
 # not automatically collect the files that we install inside ${libdir}/argos3,
 # ${datadir}/argos3, and ${includedir}/argos3.
