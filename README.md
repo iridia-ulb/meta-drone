@@ -2,6 +2,7 @@
 
 ## Description
 The [meta-drone repository](https://github.com/iridia-ulb/meta-drone) contains a layer for the Yocto build system, which generates a complete, bootable Linux OS ready to be run on the IRIDIA drone. This system comes preinstalled with:
+
 - ARGoS3 and a plugin for the drone
 - Python3
 
@@ -19,18 +20,22 @@ We now need to clone the layers for the build system as follows:
 # Switch to the build location
 cd /home/$(id -un)/yocto-drone
 # Clone the Yocto repository
-git clone git://git.yoctoproject.org/poky --branch zeus --single-branch
+git clone git://git.yoctoproject.org/poky \
+ --branch zeus --single-branch
 # Clone additional layers inside the Yocto repository
 cd poky
-git clone git://git.openembedded.org/meta-openembedded --branch zeus --single-branch
-git clone git://git.yoctoproject.org/meta-intel.git --branch zeus --single-branch
+git clone git://git.openembedded.org/meta-openembedded \
+ --branch zeus --single-branch
+git clone git://git.yoctoproject.org/meta-intel.git \
+ --branch zeus --single-branch
 git clone https://github.com/iridia-ulb/meta-drone.git
 ```
 
 ### Create the Docker image
 The following command will execute the Dockerfile in the meta-drone repository and create a Docker image based on Ubuntu 18.04 LTS. The image will contain a user and a group, which match the identifiers of current user and group. Setting the user and group in this way enables trivial access to the build system from the host.
 ```sh
-sudo docker build -t yocto-drone:latest https://github.com/iridia-ulb/meta-drone.git#:docker \
+sudo docker build -t yocto-drone:latest \
+ https://github.com/iridia-ulb/meta-drone.git#:docker \
  --build-arg host_user_id=$(id -u) \
  --build-arg host_group_id=$(id -g)
 ```
@@ -38,7 +43,8 @@ sudo docker build -t yocto-drone:latest https://github.com/iridia-ulb/meta-drone
 ### Create the Docker container
 Once the above command has completed successfully, you can run the following command to create a container from the image. Note the two paths given after the `-v` option. The format of this argument is `path/on/host:path/in/container` where `path/on/host` is a directory on your host system and `path/in/container` is a directory inside the Docker container. This command will map the home directory inside the container to a directory called `yocto-drone` under the current user's home directory on the host.
 ```sh
-sudo docker create --tty --interactive --volume /home/$(id -un)/yocto-drone:/home/developer \
+sudo docker create --tty --interactive \
+ --volume /home/$(id -un)/yocto-drone:/home/developer \
  --name yocto-drone --hostname yocto-drone yocto-drone:latest
 ```
 After executing this command, you should have a new container with the build environment. The following commands will start and attach to that container.
@@ -62,7 +68,7 @@ The most straightforward way to copy a bootable image to the USB stick is to use
 # unmount the device and/or its partitions
 umount /dev/sdX*
 # write the image to the device
-dd if=PATH/TO/poky/build/tmp/deploy/images/up-core/upboard-image-base-up-core.hddimg of=/dev/sdX
+dd if=PATH/TO/upboard-image-base-up-core.hddimg of=/dev/sdX
 # run sync to ensure that all data has been copied
 sync
 # unmount the device and/or its partitions again (in case they were mounted)
